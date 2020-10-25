@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Class (models.Model):  # Foreign key
-    name = models.Charfield(max_length=20)
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
@@ -29,7 +29,7 @@ class Caste(models.Model):  # Foreign key
         return self.name
 
 class Religion(models.Model):   # Foreign key
-    name = models.Charfield(max_length=20)
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
@@ -53,7 +53,15 @@ class Student(models.Model):
     email_id = models.EmailField(max_length=40,blank=True)
     gender = models.ForeignKey(Gender,blank=False)
     Feecategory = models.CharField(max_length=30,blank=True)
-
+    caste = models.ForeignKey(Caste,blank=True,null=True)
+    blood_grp = models.CharField(max_length=5,blank=True)
+    Religion = models.ForeignKey(Religion,blank=True)
+    ref_admn_no = models.CharField(verbose_name="Reference admission no. of Ex-Student",blank=True,null=True)
+    action = models.CharField(verbose_name="Action",max_length=10,blank=True)
+    arrear_due = models.CharField(verbose_name="Arrear Due",max_length=10,blank=True)
+    ttod = models.CharField(verbose_name="Total Onetime Due",max_length=10,blank=True)
+    ttnd = models.CharField(verbose_name="Total Normal Due",max_length=10,blank=True)
+    due = models.NullBooleanField(verbose_name="Due(YES/NO)",choices=LOCATOR_YES_NO_CHOICES,max_length=3,blank=True, null=True, default=None)
 
 
 
