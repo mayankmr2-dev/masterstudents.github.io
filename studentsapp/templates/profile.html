@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3 class="text-dark mb-4">ENTRY PROFILE</h3>
+    <div class="row mb-3">
+        <div class="col-lg-8">
+            <div class="row mb-3 d-none">
+                <div class="col">
+                    <div class="card text-white bg-primary shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                since last month</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                since last month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-dark text-uppercase text-left shadow mb-3">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">sTUDENT DETAILS FORM</p>
+                        </div>
+                        <div class="card-body text-left text-dark">
+                            <form>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="username"><strong>Admission
+                                                    Numbe</strong>r</label><input class="form-control" type="text"
+                                                placeholder="user.name" name="username">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="email"><strong>ADMISSION
+                                                    DATE</strong><br></label><input class="form-control" type="email"
+                                                placeholder="user@example.com" name="email"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label
+                                                for="first_name"><strong>cLASS-sec</strong><br></label><input
+                                                class="form-control" type="text" placeholder="John" name="first_name">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"><strong>rOLL
+                                                    nO.&nbsp;</strong><br></label><input class="form-control"
+                                                type="text" placeholder="Doe" name="last_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>sTUDENT'S
+                                                    NAME</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"><strong>sTUDENT'S
+                                                    aADHAR NO.</strong></label><input class="form-control" type="text"
+                                                placeholder="Doe" name="last_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>mOTHER'S
+                                                    NAME</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"><strong>MOTHER'S
+                                                    AADHAR NO.</strong></label><input class="form-control" type="text"
+                                                placeholder="Doe" name="last_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>fATHER'S
+                                                    NAME</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"><strong>FATHER'S
+                                                    AADHAR NO.</strong></label><input class="form-control" type="text"
+                                                placeholder="Doe" name="last_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>dATE OF
+                                                    bIRTH</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"></label></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>mOBILE
+                                                    NUMBER 1</strong><br></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"><strong>MOBILE
+                                                    NUMBER 2&nbsp;</strong><br></label><input class="form-control"
+                                                type="text" placeholder="Doe" name="last_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>pRESENT
+                                                    ADDRESS</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="first_name"><strong>PERMANENT
+                                                    ADDRESS</strong></label><input class="form-control" type="text"
+                                                placeholder="John" name="first_name"></div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label for="first_name"><strong>EMAIL
+                                                            id</strong></label><input class="form-control" type="text"
+                                                        placeholder="John" name="first_name"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label
+                                                        for="last_name"><strong>GENDER</strong></label><input
+                                                        class="form-control" type="text" placeholder="Doe"
+                                                        name="last_name"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label for="first_name"><strong>FEE
+                                                            CATEGORY</strong></label><input class="form-control"
+                                                        type="text" placeholder="John" name="first_name"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label
+                                                        for="last_name"><strong>CASTE</strong></label><input
+                                                        class="form-control" type="text" placeholder="Doe"
+                                                        name="last_name"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label
+                                                        for="first_name"><strong>RELIGION</strong></label><input
+                                                        class="form-control" type="text" placeholder="John"
+                                                        name="first_name"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label for="last_name"><strong>rEF. ADMISSION
+                                                            NO. OF
+                                                            EX-sTUDENT</strong></label><input class="form-control"
+                                                        type="text" placeholder="Doe" name="last_name"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label
+                                                        for="first_name"><strong>ACTION</strong></label><input
+                                                        class="form-control" type="text" placeholder="John"
+                                                        name="first_name"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label for="last_name"><strong>ARREAR
+                                                            DUE</strong></label><input class="form-control" type="text"
+                                                        placeholder="Doe" name="last_name"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label for="first_name"><strong>tOTAL ONE TIME
+                                                            DUE</strong></label><input class="form-control" type="text"
+                                                        placeholder="John" name="first_name"></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label for="last_name"><strong>TOTAL NORMAL
+                                                            DUE</strong></label><input class="form-control" type="text"
+                                                        placeholder="Doe" name="last_name"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><label for="first_name"><strong>due
+                                                            (yes/no)</strong></label>
+                                                    <div class="dropdown"><button
+                                                            class="btn btn-primary dropdown-toggle"
+                                                            data-toggle="dropdown" aria-expanded="false"
+                                                            type="button">Dropdown </button>
+                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item"
+                                                                role="presentation" href="#">First
+                                                                Item</a><a class="dropdown-item" role="presentation"
+                                                                href="#">Second
+                                                                Item</a><a class="dropdown-item" role="presentation"
+                                                                href="#">Third
+                                                                Item</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group"><label for="last_name"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card shadow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-5"></div>
+</div>
+</div>
+{% endblock content %}
