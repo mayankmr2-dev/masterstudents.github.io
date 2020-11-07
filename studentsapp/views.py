@@ -9,6 +9,9 @@ def home(request):
 
 
 def profile(request):
+    if request.method == 'POST':
+        print("This is post")
+
     return render(request, 'profile.html')
 
 

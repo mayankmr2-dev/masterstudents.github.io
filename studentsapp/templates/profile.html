@@ -48,74 +48,76 @@
                             <p class="text-primary m-0 font-weight-bold">sTUDENT DETAILS FORM</p>
                         </div>
                         <div class="card-body text-left text-dark">
-                            <form>
+                            <form action="" method="POST">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="username"><strong>Admission
-                                                    Numbe</strong>r</label><input class="form-control" type="text"
-                                                placeholder="user.name" name="username">
+                                                    Number</strong></label><input class="form-control" type="text"
+                                                placeholder="Enter admission number" name="adm_number">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="email"><strong>ADMISSION
-                                                    DATE</strong><br></label><input class="form-control" type="email"
-                                                placeholder="user@example.com" name="email"></div>
+                                                    DATE</strong><br></label><input class="form-control" type="date"
+                                                placeholder="Enter date" name="adm_date"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label
                                                 for="first_name"><strong>cLASS-sec</strong><br></label><input
-                                                class="form-control" type="text" placeholder="John" name="first_name">
+                                                class="form-control" type="text" placeholder="class-sec"
+                                                name="class_sec">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"><strong>rOLL
                                                     nO.&nbsp;</strong><br></label><input class="form-control"
-                                                type="text" placeholder="Doe" name="last_name"></div>
+                                                type="number" placeholder="Roll no." name="roll_no"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>sTUDENT'S
                                                     NAME</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                placeholder="Enter name" name="st_name"></div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"><strong>sTUDENT'S
                                                     aADHAR NO.</strong></label><input class="form-control" type="text"
-                                                placeholder="Doe" name="last_name"></div>
+                                                placeholder="Enter aadhar" name="aad_no"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>mOTHER'S
                                                     NAME</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                placeholder="Enter mother's name" name="mother_name"></div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"><strong>MOTHER'S
                                                     AADHAR NO.</strong></label><input class="form-control" type="text"
-                                                placeholder="Doe" name="last_name"></div>
+                                                placeholder="Enter mother's aadhar" name="mother_aad"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>fATHER'S
                                                     NAME</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                placeholder="Enter father's name" name="father_name"></div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"><strong>FATHER'S
                                                     AADHAR NO.</strong></label><input class="form-control" type="text"
-                                                placeholder="Doe" name="last_name"></div>
+                                                placeholder="Enter father's aadhar" name="father_aad"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>dATE OF
-                                                    bIRTH</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                    bIRTH</strong></label><input class="form-control" type="date"
+                                                placeholder="Enter date of birth" name="dob"></div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"></label></div>
@@ -124,65 +126,67 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>mOBILE
-                                                    NUMBER 1</strong><br></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                    NUMBER 1</strong><br></label><input class="form-control"
+                                                type="phonenumber" placeholder="mobile 1" name="mob1"></div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group"><label for="last_name"><strong>MOBILE
                                                     NUMBER 2&nbsp;</strong><br></label><input class="form-control"
-                                                type="text" placeholder="Doe" name="last_name"></div>
+                                                type="phonenumber" placeholder="mobile 2" name="mob2"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>pRESENT
                                                     ADDRESS</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                placeholder="address" name="pr_address"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group"><label for="first_name"><strong>PERMANENT
                                                     ADDRESS</strong></label><input class="form-control" type="text"
-                                                placeholder="John" name="first_name"></div>
+                                                placeholder="address" name="perm_address"></div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="first_name"><strong>EMAIL
-                                                            id</strong></label><input class="form-control" type="text"
-                                                        placeholder="John" name="first_name"></div>
+                                                            id</strong></label><input class="form-control" type="email"
+                                                        placeholder="Enter your email" name="email"></div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group"><label
                                                         for="last_name"><strong>GENDER</strong></label><input
-                                                        class="form-control" type="text" placeholder="Doe"
-                                                        name="last_name"></div>
+                                                        class="form-control" type="text" placeholder="gender"
+                                                        name="gender"></div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="first_name"><strong>FEE
                                                             CATEGORY</strong></label><input class="form-control"
-                                                        type="text" placeholder="John" name="first_name"></div>
+                                                        type="text" placeholder="Fee category" name="fee_category">
+                                                </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group"><label
                                                         for="last_name"><strong>CASTE</strong></label><input
-                                                        class="form-control" type="text" placeholder="Doe"
-                                                        name="last_name"></div>
+                                                        class="form-control" type="text" placeholder="caste"
+                                                        name="caste"></div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label
                                                         for="first_name"><strong>RELIGION</strong></label><input
-                                                        class="form-control" type="text" placeholder="John"
-                                                        name="first_name"></div>
+                                                        class="form-control" type="text" placeholder="religion"
+                                                        name="religion"></div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group"><label for="last_name"><strong>rEF. ADMISSION
                                                             NO. OF
                                                             EX-sTUDENT</strong></label><input class="form-control"
-                                                        type="text" placeholder="Doe" name="last_name"></div>
+                                                        type="text" placeholder="Reference admission number"
+                                                        name="ref_no"></div>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -190,57 +194,48 @@
                                                 <div class="form-group"><label
                                                         for="first_name"><strong>ACTION</strong></label><input
                                                         class="form-control" type="text" placeholder="John"
-                                                        name="first_name"></div>
+                                                        name="action"></div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group"><label for="last_name"><strong>ARREAR
                                                             DUE</strong></label><input class="form-control" type="text"
-                                                        placeholder="Doe" name="last_name"></div>
+                                                        placeholder="Doe" name="arrear_due"></div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="first_name"><strong>tOTAL ONE TIME
                                                             DUE</strong></label><input class="form-control" type="text"
-                                                        placeholder="John" name="first_name"></div>
+                                                        placeholder="John" name="ttod"></div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group"><label for="last_name"><strong>TOTAL NORMAL
                                                             DUE</strong></label><input class="form-control" type="text"
-                                                        placeholder="Doe" name="last_name"></div>
+                                                        placeholder="Doe" name="tnd"></div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col">
                                                 <div class="form-group"><label for="first_name"><strong>due
-                                                            (yes/no)</strong></label>
-                                                    <div class="dropdown"><button
-                                                            class="btn btn-primary dropdown-toggle"
-                                                            data-toggle="dropdown" aria-expanded="false"
-                                                            type="button">Dropdown </button>
-                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item"
-                                                                role="presentation" href="#">First
-                                                                Item</a><a class="dropdown-item" role="presentation"
-                                                                href="#">Second
-                                                                Item</a><a class="dropdown-item" role="presentation"
-                                                                href="#">Third
-                                                                Item</a></div>
-                                                    </div>
+                                                            (Yes/No)</strong></label>
+                                                    <select name="due" class="form-control">
+                                                        <option></option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <div class="form-group"><label for="last_name"></label>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
+                                <center><input class="btn btn-success" type="submit" value="SUBMIT"></center>
                             </form>
                         </div>
                     </div>
-                    <div class="card shadow"></div>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="card shadow mb-5"></div>
