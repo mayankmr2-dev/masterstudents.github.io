@@ -6,8 +6,13 @@ from django.db import models
 class Class(models.Model):  # Foreign key
     name = models.CharField(max_length=20)
 
-    def __str__(self):
-        return self.name
+    @staticmethod
+    def get_all_Class():
+        return Class.objects.all()
+
+    class Meta:
+        verbose_name = 'Class'
+        verbose_name_plural = 'Classes'
 
 
 class Gender(models.Model):  # Foreign key
@@ -20,12 +25,17 @@ class Gender(models.Model):  # Foreign key
 class Fee_category(models.Model):
     name = models.CharField(max_length=20)
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        verbose_name = 'Fee category'
+        verbose_name_plural = 'Fee categories'
 
 
 class Caste(models.Model):  # Foreign key
     name = models.CharField(max_length=20)
+
+    @staticmethod
+    def get_all_castes():
+        return Caste.objects.all()
 
     def __str__(self):
         return self.name
@@ -33,6 +43,10 @@ class Caste(models.Model):  # Foreign key
 
 class Religion(models.Model):   # Foreign key
     name = models.CharField(max_length=20)
+
+    @staticmethod
+    def get_all_Religion():
+        return Religion.objects.all()
 
     def __str__(self):
         return self.name

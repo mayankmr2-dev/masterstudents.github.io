@@ -1,0 +1,19 @@
+from django.forms import ModelForm
+from .models import Student,Class,Caste,Religion,Gender
+from django import forms
+from django.forms import ModelChoiceField
+
+
+class StudentForm(forms.ModelForm):
+    class_sec = forms.ModelChoiceField(
+        queryset=Class.objects.all(), initial=0)
+    gender = forms.ModelChoiceField(queryset=Gender.objects.all(), initial=0)
+    caste = forms.ModelChoiceField(queryset=Caste.objects.all(), initial=0)
+    Religion = forms.ModelChoiceField(
+        queryset=Religion.objects.all(), initial=0)
+
+    class Meta(object):
+        model = Student
+        fields = ['admission_no', 'admission_date', 'class_sec', 'roll_no', 'name', 'aadhar_no', 'mother_name', 'mother_aadhar', 'father_name',
+                  'father_aadhar', 'dob', 'mobile_1', 'mobile_2', 'pr_addr', 'pm_addr', 'email_id', 'gender', 'Feecategory', 'caste', 'blood_grp', 'Religion',
+                  'ref_admn_no', 'action', 'arrear_due', 'ttod', 'ttnd', 'due']
