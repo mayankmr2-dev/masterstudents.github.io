@@ -15,7 +15,7 @@ def profile(request):
     form = StudentForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('computer_list')
+        return redirect('profile')
     context = {
         'form': form
     }

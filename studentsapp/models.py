@@ -10,8 +10,11 @@ class Class(models.Model):  # Foreign key
     def get_all_Class():
         return Class.objects.all()
 
+    def __str__(self):
+        return self.name
+
     class Meta:
-        verbose_name = 'Class'
+        # verbose_name = 'Class'
         verbose_name_plural = 'Classes'
 
 
@@ -54,9 +57,9 @@ class Religion(models.Model):   # Foreign key
 
 class Student(models.Model):
     admission_no = models.CharField(
-        verbose_name="Admission Name", max_length=30, blank=False)  #
+        verbose_name="Admission Number", max_length=30, blank=False)  #
     admission_date = models.DateField(
-        verbose_name="Admission Date", auto_now=False, auto_now_add=False, blank=True)
+        verbose_name="Admission Date", auto_now=False, auto_now_add=False, blank=True,null=True)
     class_sec = models.ForeignKey(
         Class, verbose_name="Class-Sec", blank=False, on_delete=models.CASCADE)   #
     roll_no = models.IntegerField(
@@ -85,23 +88,23 @@ class Student(models.Model):
     Feecategory = models.CharField(max_length=30, blank=True)
     caste = models.ForeignKey(
         Caste, blank=True, null=True, on_delete=models.CASCADE)
-    blood_grp = models.CharField(max_length=5, blank=True)
+    blood_grp = models.CharField(max_length=5,null=True, blank=True)
     Religion = models.ForeignKey(
-        Religion, blank=True, on_delete=models.CASCADE)
+        Religion,null=True, blank=True, on_delete=models.CASCADE)
     ref_admn_no = models.CharField(
         verbose_name="Reference admission no. of Ex-Student", max_length=30, blank=True, null=True)
     action = models.CharField(verbose_name="Action", max_length=10, blank=True)
     arrear_due = models.CharField(
-        verbose_name="Arrear Due", max_length=10, blank=True)
+        verbose_name="Arrear Due", max_length=10,null=True, blank=True)
     ttod = models.CharField(
-        verbose_name="Total Onetime Due", max_length=10, blank=True)
+        verbose_name="Total Onetime Due", max_length=10,null=True, blank=True)
     ttnd = models.CharField(
-        verbose_name="Total Normal Due", max_length=10, blank=True)
+        verbose_name="Total Normal Due", max_length=10, null=True,blank=True)
     due = models.BooleanField(
         verbose_name="Due(YES/NO)", blank=True, null=True, default=None)
 
     def __str__(self):
-        return self.computer_name, self.class_sec, self.roll_no
+        return self.name
 
     class Meta:
         verbose_name = 'Student'

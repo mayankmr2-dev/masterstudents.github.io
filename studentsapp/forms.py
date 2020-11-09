@@ -6,11 +6,11 @@ from django.forms import ModelChoiceField
 
 class StudentForm(forms.ModelForm):
     class_sec = forms.ModelChoiceField(
-        queryset=Class.objects.all(), initial=0)
-    gender = forms.ModelChoiceField(queryset=Gender.objects.all(), initial=0)
-    caste = forms.ModelChoiceField(queryset=Caste.objects.all(), initial=0)
+        queryset=Class.objects.all(), initial=None)
+    gender = forms.ModelChoiceField(queryset=Gender.objects.all(), initial=None)
+    caste = forms.ModelChoiceField(queryset=Caste.objects.all(), initial=None)
     Religion = forms.ModelChoiceField(
-        queryset=Religion.objects.all(), initial=0)
+        queryset=Religion.objects.all(), initial=None)
 
     class Meta(object):
         model = Student
