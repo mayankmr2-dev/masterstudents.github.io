@@ -3,11 +3,33 @@ from django.views import View
 from .models import *
 from django import forms
 from .forms import StudentForm
+from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import User,auth
 # Create your views here.
 
 
 def home(request):
     return render(request, 'home.html')
+
+# def Login(request):
+#     return render(request,'login.html')
+
+# def login(request):
+#     if request.method=="POST":
+#         username = request.POST['username']
+#         password = request.POST['password']
+
+#         user = auth.authenticate(username=username,password=password)
+#         if user is not None:
+#             auth.login(request,user)
+#             return redirect('home')
+#         else:
+#             messages.info(request,"Invalid Credentials")
+#             return redirect('profile')
+
+#     else:
+#         return render(request, 'login.html')
 
 
 def profile(request):

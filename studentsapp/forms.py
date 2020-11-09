@@ -2,6 +2,10 @@ from django.forms import ModelForm
 from .models import Student,Class,Caste,Religion,Gender
 from django import forms
 from django.forms import ModelChoiceField
+from django.contrib.auth.forms import UserCreationForm
+
+# class RegistrationForm(UserCreationForm):
+#     email 
 
 
 class StudentForm(forms.ModelForm):

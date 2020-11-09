@@ -10,6 +10,11 @@
         <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block"
             role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
     </div>
+    <div>
+        {% for message in messages %}
+        <h3>{{ message }}</h3>
+        {% endfor %}
+    </div>
     <div class="row">
         <div class="col-md-6 col-xl-3 mb-4">
             <div class="card shadow border-left-primary py-2">

@@ -23,15 +23,15 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home' %}"><i    
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home' %}"><i
                                 class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile' %}"><i   
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile' %}"><i
                                 class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'table' %}"><i       
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'table' %}"><i
                                 class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login' %}"><i       
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login' %}"><i
                                 class="far fa-user-circle"></i><span>Login</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'register' %}"><i    
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'register' %}"><i
                                 class="fas fa-user-circle"></i><span>Register</span></a><a class="nav-link"
                             href="{% url 'feestructure' %}"><i class="fas fa-id-card"></i><span>Fees</span></a></li>
                 </ul>
@@ -82,7 +82,7 @@
                                                 class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation"
-                                            href="#"><i
+                                            href="{% url 'logout' %}"><i
                                                 class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
