@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.views import View
 from .models import *
 from django import forms
@@ -27,6 +27,18 @@ def profile(request):
     }
     return render(request, 'profile.html', context)
 
+def profile_edit(request, id=None):
+    instance = get_object_or_404(Student, id=id)
+    form = StudentForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect('table')
+    context = {
+        'instance': instance,
+        'form': form
+    }
+    return render(request, 'profile.html', context)
 
 def login(request):
     return render(request, 'login.html')
@@ -43,6 +55,14 @@ def table(request):
         "student":student
     }
     return render(request, 'table.html', context)
+
+def tc(request):
+    student = Student.objects.filter(due=True)
+    # print(student)  
+    context = {
+        "student":student
+    }
+    return render(request, 'tc.html', context)
 
 @login_required(login_url='/login')
 def feestructure(request):

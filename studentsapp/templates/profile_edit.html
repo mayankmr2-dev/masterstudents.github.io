@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3 class="text-dark mb-4">ENTRY PROFILE</h3>
+    <div class="row mb-3">
+        <div class="col-lg-8">
+            <div class="row mb-3 d-none">
+                <div class="col">
+                    <div class="card text-white bg-primary shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                since last month</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success shadow">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="m-0">Peformance</p>
+                                    <p class="m-0"><strong>65.2%</strong></p>
+                                </div>
+                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                            </div>
+                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5%
+                                since last month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-dark text-uppercase text-left shadow mb-3">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">sTUDENT DETAILS FORM</p>
+                        </div>
+                        <div class="card-body text-left text-dark">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <!-- {% comment %} {{form.as_p}} {% endcomment %} -->
+                                {% comment %} {{form|crispy}} {% endcomment %}
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <strong>{{ form.admission_no|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <strong>{{ form.admission_date|as_crispy_field  }}</strong></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.class_sec|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.roll_no|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.name|as_crispy_field  }}</strong></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.aadhar_no|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.mother_name|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <strong>{{ form.mother_aadhar|as_crispy_field  }}</strong></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.father_name|as_crispy_field }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <strong>{{ form.father_aadhar|as_crispy_field }}</strong></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.dob|as_crispy_field  }}</strong></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="last_name"></label></div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.mobile_1|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.mobile_2|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.pr_addr|as_crispy_field  }}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><strong>{{ form.pm_addr|as_crispy_field  }}</strong>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.email_id|as_crispy_field  }}</strong></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.gender|as_crispy_field }}</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.Feecategory|as_crispy_field  }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.caste|as_crispy_field  }}</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.blood_grp|as_crispy_field  }}</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.Religion|as_crispy_field }}</strong></div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.ref_admn_no|as_crispy_field }}</strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.action|as_crispy_field }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.arrear_due|as_crispy_field }}</strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group"><strong>{{ form.ttod|as_crispy_field }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.ttnd|as_crispy_field  }}</strong></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <strong>{{ form.due|as_crispy_field  }}</strong>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <center><input class="btn btn-success" type="submit" value="SUBMIT"></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card shadow mb-5"></div>
+</div>
+</div>
+{% endblock content %}
