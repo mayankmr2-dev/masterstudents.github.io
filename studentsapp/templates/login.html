@@ -28,12 +28,14 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
-                                    </div>  
+                                    </div>
                                     <form method="POST">
                                         {% csrf_token %}
-                                        {% if error %}
+                                        {% if form.non_field_errors %}
                                         <div class="alert alert-danger" role="alert">
-                                            {{error}}
+                                            {% for error in form.non_field_errors %}
+                                            <p>{{ error }}</p>
+                                            {% endfor %}
                                         </div>
                                         {% endif %}
                                         <div class="form-group"><input class="form-control form-control-user"
@@ -55,9 +57,9 @@
                                         <hr>
                                     </form>
                                     <div>
-                                    {% for message in messages %}
-                                    <h3>{{ message }}</h3>
-                                    {% endfor %}
+                                        {% for message in messages %}
+                                        <h3>{{ message }}</h3>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
