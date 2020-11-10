@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
+from .models import Student
 # Create your views here.
 
 @login_required(login_url='/login')
@@ -34,9 +35,14 @@ def login(request):
 def register(request):
     return render(request, 'register.html')
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def table(request):
-    return render(request, 'table.html')
+    student = Student.objects.all()
+    # print(student)  
+    context = {
+        "student":student
+    }
+    return render(request, 'table.html', context)
 
 @login_required(login_url='/login')
 def feestructure(request):
