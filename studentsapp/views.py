@@ -56,6 +56,14 @@ def table(request):
     }
     return render(request, 'table.html', context)
 
+def lis(request):
+    student = Student.objects.all()
+    # print(student)  
+    context = {
+        "student":student
+    }
+    return render(request, 'list.html', context)
+
 def tc(request):
     student = Student.objects.filter(due=True)
     # print(student)  

@@ -12,6 +12,7 @@ urlpatterns = [
     path('logout/',LogoutView.as_view(template_name='logout.html'),name='logout'),
     path('feestructure/', views.feestructure, name='feestructure'),
     path('register/', views.register, name='register'),
+    path('list/', views.lis, name='list'),
     # path('extra/', views.Register, name='register')
 ]
 

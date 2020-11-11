@@ -11,6 +11,12 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css" />
+    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <link href="{% static 'media/css/jquery.dataTables.min.css' %}" rel="stylesheet">
+
+    <!-- {% block link %} {% endblock link %} -->
 </head>
 
 <body id="page-top">
@@ -31,6 +37,8 @@
                                 class="fas fa-table"></i><span>Table</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'tc' %}"><i
                                 class="far fa-user-circle"></i><span>T.C.</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'list' %}"><i
+                                class="far fa-user-circle"></i><span>List</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'register' %}"><i
                                 class="fas fa-user-circle"></i><span>Register</span></a><a class="nav-link"
                             href="{% url 'feestructure' %}"><i class="fas fa-id-card"></i><span>Fees</span></a></li>
@@ -71,8 +79,10 @@
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
-                                        data-toggle="dropdown" aria-expanded="false" href="#"><span  
-                                            class="d-none d-lg-inline mr-2 text-gray-600 small"><strong data-selected="true" data-label-id="0" style="font-size: 18px;">Hi, {{user.username}}</strong></span></a>
+                                        data-toggle="dropdown" aria-expanded="false" href="#"><span
+                                            class="d-none d-lg-inline mr-2 text-gray-600 small"><strong
+                                                data-selected="true" data-label-id="0" style="font-size: 18px;">Hi,
+                                                {{user.username}}</strong></span></a>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
                                         <a class="dropdown-item" role="presentation" href="#"><i
                                                 class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
@@ -100,10 +110,16 @@
             </footer>
             <script src="{% static 'studentsapp/js/jquery.min.js' %}"></script>
             <script src="{% static 'studentsapp/bootstrap/js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
             <script src="{% static 'studentsapp/js/chart.min.js' %}"></script>
             <script src="{% static 'assets/js/bs-init.js' %}"></script>
+            <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
             <script src="{% static 'assets/js/theme.js' %}"></script>
+            <script src="{% static 'js-dt/jquery.js' %}"></script>
+            <script src="{% static 'media/js/jquery.dataTables.min.js' %}"></script>
+            {% block script %} {% endblock script %}
+
 </body>
 
 </html>
