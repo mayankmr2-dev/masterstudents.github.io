@@ -8,7 +8,7 @@
 {% endblock link %} {% endcomment %}
 {% block content %}
 
-<div class="col-md-12">
+<div class="container-fluid">
     <h1>Students Info</h1>
     <div class="table-responsive">
         <!-- <table class="table table-bordered table-light"> -->
@@ -42,6 +42,7 @@
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total onetime due</th>
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total normal due</th>
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Delete</th>
             </thead>
             <tbody>
                 {% for instance in student %}
@@ -51,7 +52,7 @@
                     <td scope="row">{{instance.admission_date}}</td>
                     <td scope="row">{{instance.class_sec}}</td>
                     <td scope="row">{{instance.roll_no}}</td>
-                    <td scope="row">{{instance.name}}</td>
+                    <td scope="row"><a href="{% url 'profile_edit' id=instance.id %}">{{instance.name}}</td>
                     <td scope="row">{{instance.aadhar_no}}</td>
                     <td scope="row">{{instance.mother_name}}</td>
                     <td scope="row">{{instance.mother_aadhar}}</td>
@@ -74,6 +75,9 @@
                     <td scope="row">{{instance.ttod}}</td>
                     <td scope="row">{{instance.ttnd}}</td>
                     <td scope="row">{{instance.due}}</td>
+                    <td scope="row"><a href="{% url 'profile_delete' id=instance.id %}">
+                            <center>&#x274C;</center>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

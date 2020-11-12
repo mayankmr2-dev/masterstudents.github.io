@@ -7,12 +7,19 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
-from .models import Student
+from .models import Student,Caste
 # Create your views here.
 
 @login_required(login_url='/login')
 def home(request):
-    return render(request, 'home.html')
+    gen = Student.objects.filter(caste=6).count()
+    obc = Student.objects.filter(caste=7).count()
+    sc = Student.objects.filter(caste=8).count()
+    st = Student.objects.filter(caste=9).count()
+    context = {
+        "gen":gen,"obc":obc,"sc":sc,"st":st
+    }
+    return render(request, 'home.html',context)
 
 
 @login_required(login_url='/login')
@@ -79,3 +86,8 @@ def feestructure(request):
 @login_required(login_url='/login')
 def classfee(request):
     return render(request, 'classfee.html')
+
+def profile_delete(request, id=None):
+    instance = get_object_or_404(Computer, id=id)
+    instance.delete()
+    return redirect("table")
