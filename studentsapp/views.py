@@ -72,7 +72,7 @@ def lis(request):
     return render(request, 'list.html', context)
 
 def tc(request):
-    student = Student.objects.filter(due=True)
+    student = Student.objects.filter(tc=True)
     # print(student)  
     context = {
         "student":student

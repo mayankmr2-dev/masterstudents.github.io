@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget
 # Create your models here.
 
 
@@ -25,6 +26,21 @@ class Gender(models.Model):  # Foreign key
     def __str__(self):
         return self.name
 
+class Fee_structure(models.Model):
+    class_name = models.CharField(verbose_name="Class",max_length=40)
+    subs_fee = models.IntegerField(verbose_name="Subsidiary Fee")
+    lab_fee = models.IntegerField(verbose_name="Laboratory Fee")
+    tut_fee = models.IntegerField(verbose_name="Tuition Fee")
+    comp_fee = models.IntegerField(verbose_name="Computer Fee")
+    one_time = models.IntegerField(verbose_name="OneTime Fee")
+    normal = models.IntegerField(verbose_name="Normal Fee")
+
+    class Meta:
+        verbose_name = 'Fee structure'
+        verbose_name_plural = 'Fee structure'
+
+    def __str__(self):
+        return "class "+self.class_name
 
 class Fee_category(models.Model):
     name = models.CharField(max_length=20)
@@ -58,7 +74,7 @@ class Religion(models.Model):   # Foreign key
 
 class Student(models.Model):
     admission_no = models.CharField(
-        verbose_name="Admission Number", max_length=30, blank=False)  #
+        verbose_name="Admission Number", max_length=30, blank=True,null=True)  #
     admission_date = models.DateField(
         verbose_name="Admission Date", auto_now=False, auto_now_add=False, blank=True,null=True)
     class_sec = models.ForeignKey(
@@ -77,7 +93,7 @@ class Student(models.Model):
     father_aadhar = models.CharField(
         verbose_name="Father's Aadhar No.", max_length=30, blank=True)
     dob = models.DateField(verbose_name="D.O.B",
-                           auto_now=False, auto_now_add=False, blank=False)
+                           auto_now=False, auto_now_add=False, blank=True,null=True)
     mobile_1 = models.CharField(max_length=10, blank=True)
     mobile_2 = models.CharField(max_length=10, blank=True)
     pr_addr = models.CharField(
@@ -103,6 +119,8 @@ class Student(models.Model):
         verbose_name="Total Normal Due", max_length=10, null=True,blank=True)
     due = models.BooleanField(
         verbose_name="Due(YES/NO)", blank=True, null=True, default=None)
+    tc = models.BooleanField(
+        verbose_name="TC(YES/NO)", blank=True, null=True, default=None)
 
     def __str__(self):
         return self.name
@@ -111,3 +129,5 @@ class Student(models.Model):
         verbose_name = 'Student'
         verbose_name_plural = 'Students'
         db_table = 'Student_table'
+
+# class_sec,gender,caste,religion

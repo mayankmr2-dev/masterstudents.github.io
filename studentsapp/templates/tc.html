@@ -1,84 +1,97 @@
 {% extends 'base.html' %}
+<!-- {% load crispy_forms_tags %} -->
 
 {% load static %}
+{% block title %} TC issued {% endblock title %}
+{% comment %} {% block link %}
 
-{% block title %}Students Table{% endblock title %}
-
+{% endblock link %} {% endcomment %}
 {% block content %}
+
 <div class="container-fluid">
-    <h3 class="text-dark mb-4">TC Issued</h3>
-    <div class="card shadow">
-        <div class="card-body">
-            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                <table class="table dataTable my-0" id="dataTable">
-                    <thead>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Admission No.</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Admission Date</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Class-Sec</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Roll No.</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Name</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Aadhar No.</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Mother's Name</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Mother's Aadhar</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Father's Name</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Father's Aadhar</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">D.O.B</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Mobile No.1</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Mobile No.2</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Present Address</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Permanent Address</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Email Id</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Gender</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Fee Category</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Caste</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Blood Group</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Religion</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Ref. adm. No. of Ex-Student</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Action</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Arrear Due</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Total onetime due</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Total normal due</th>
-                        <th style="padding-top: 18px; padding-bottom: 57px;">Due</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for instance in student %}
-                        <tr>
-                            <td>{{instance.admission_no}}</td>
-                            <td>{{instance.admission_date}}</td>
-                            <td>{{instance.class_sec}}</td>
-                            <td>{{instance.roll_no}}</td>
-                            <td>{{instance.name}}</td>
-                            <td>{{instance.aadhar_no}}</td>
-                            <td>{{instance.mother_name}}</td>
-                            <td>{{instance.mother_aadhar}}</td>
-                            <td>{{instance.father_name}}</td>
-                            <td>{{instance.father_aadhar}}</td>
-                            <td>{{instance.dob}}</td>
-                            <td>{{instance.mobile_1}}</td>
-                            <td>{{instance.mobile_2}}</td>
-                            <td>{{instance.pr_addr}}</td>
-                            <td>{{instance.pm_addr}}</td>
-                            <td>{{instance.email_id}}</td>
-                            <td>{{instance.gender}}</td>
-                            <td>{{instance.Feecategory}}</td>
-                            <td>{{instance.caste}}</td>
-                            <td>{{instance.blood_grp}}</td>
-                            <td>{{instance.Religion}}</td>
-                            <td>{{instance.ref_admn_no}}</td>
-                            <td>{{instance.action}}</td>
-                            <td>{{instance.arrear_due}}</td>
-                            <td>{{instance.ttod}}</td>
-                            <td>{{instance.ttnd}}</td>
-                            <td>{{instance.due}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <h1>Students Info</h1>
+    <div class="table-responsive">
+        <!-- <table class="table table-bordered table-light"> -->
+        <table id="bootstrapdatatable" width="100%" class="table table-striped table-bordered table-hover">
+            <thead>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Sl.No.</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Admission No.</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Admission Date</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Class-Sec</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Roll No.</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Name</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Aadhar No.</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Mother's Name</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Mother's Aadhar</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Father's Name</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Father's Aadhar</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">D.O.B</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Mobile No.1</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Mobile No.2</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Present Address</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Permanent Address</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Email Id</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Gender</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Fee Category</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Caste</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Blood Group</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Religion</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Ref. adm. No. of Ex-Student</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Action</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Arrear Due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total onetime due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total normal due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">TC</th>
+                <!-- <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Delete</th> -->
+            </thead>
+            <tbody>
+                {% for instance in student %}
+                <tr>
+                    <td scope="row">{{forloop.counter}}</td>
+                    <td scope="row">{{instance.admission_no}}</td>
+                    <td scope="row">{{instance.admission_date}}</td>
+                    <td scope="row">{{instance.class_sec}}</td>
+                    <td scope="row">{{instance.roll_no}}</td>
+                    <td scope="row"><a href="{% url 'profile_edit' id=instance.id %}">{{instance.name}}</td>
+                    <td scope="row">{{instance.aadhar_no}}</td>
+                    <td scope="row">{{instance.mother_name}}</td>
+                    <td scope="row">{{instance.mother_aadhar}}</td>
+                    <td scope="row">{{instance.father_name}}</td>
+                    <td scope="row">{{instance.father_aadhar}}</td>
+                    <td scope="row">{{instance.dob}}</td>
+                    <td scope="row">{{instance.mobile_1}}</td>
+                    <td scope="row">{{instance.mobile_2}}</td>
+                    <td scope="row">{{instance.pr_addr}}</td>
+                    <td scope="row">{{instance.pm_addr}}</td>
+                    <td scope="row">{{instance.email_id}}</td>
+                    <td scope="row">{{instance.gender}}</td>
+                    <td scope="row">{{instance.Feecategory}}</td>
+                    <td scope="row">{{instance.caste}}</td>
+                    <td scope="row">{{instance.blood_grp}}</td>
+                    <td scope="row">{{instance.Religion}}</td>
+                    <td scope="row">{{instance.ref_admn_no}}</td>
+                    <td scope="row">{{instance.action}}</td>
+                    <td scope="row">{{instance.arrear_due}}</td>
+                    <td scope="row">{{instance.ttod}}</td>
+                    <td scope="row">{{instance.ttnd}}</td>
+                    <td scope="row">{{instance.due}}</td>
+                    <td scope="row">{{instance.tc}}</td>
+                    <!-- <td scope="row"><a href="{% url 'profile_delete' id=instance.id %}">
+                            <center>&#x274C;</center>
+                    </td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
-</div>
-</div>
 {% endblock content %}
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#bootstrapdatatable").DataTable();
+    });
+
+</script>
+{% endblock script %}

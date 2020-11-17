@@ -3,9 +3,6 @@
 
 {% load static %}
 {% block title %} Students List {% endblock title %}
-{% comment %} {% block link %}
-
-{% endblock link %} {% endcomment %}
 {% block content %}
 
 <div class="container-fluid">
@@ -42,6 +39,7 @@
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total onetime due</th>
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Total normal due</th>
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Due</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">TC</th>
                 <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Delete</th>
             </thead>
             <tbody>
@@ -75,6 +73,7 @@
                     <td scope="row">{{instance.ttod}}</td>
                     <td scope="row">{{instance.ttnd}}</td>
                     <td scope="row">{{instance.due}}</td>
+                    <td scope="row">{{instance.tc}}</td>
                     <td scope="row"><a href="{% url 'profile_delete' id=instance.id %}">
                             <center>&#x274C;</center>
                     </td>
