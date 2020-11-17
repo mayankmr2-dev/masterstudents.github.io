@@ -7,7 +7,7 @@ from import_export.widgets import ForeignKeyWidget,DateWidget,BooleanWidget
 class StudentResource(resources.ModelResource):
     id = fields.Field(attribute='id',column_name='id')
     admission_no = fields.Field(attribute='admission_no',column_name='admission_no')
-    admission_date = fields.Field(attribute='admission_date',column_name='admission_date')
+    admission_date = fields.Field(attribute='admission_date',column_name='admission_date',widget=DateWidget())
     class_sec = fields.Field(attribute='class_sec',column_name='class_sec',widget=ForeignKeyWidget(Class, 'name'))
     roll_no = fields.Field(attribute='roll_no',column_name='roll_no')
     name = fields.Field(attribute='name',column_name='name')
