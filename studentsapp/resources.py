@@ -30,10 +30,10 @@ class StudentResource(resources.ModelResource):
     ref_admn_no = fields.Field(attribute='ref_admn_no',column_name='ref_admn_no')
     action = fields.Field(attribute='action',column_name='action')
     arrear_due = fields.Field(attribute='arrear_due',column_name='arrear_due')
-    ttod = fields.Field(attribute='ttod',column_name='ttod',widget=DateWidget())
-    ttnd = fields.Field(attribute='ttnd',column_name='ttnd',widget=DateWidget())
-    due = fields.Field(attribute='due',column_name='due',widget=BooleanWidget())
-    tc = fields.Field(attribute='tc',column_name='tc',widget=BooleanWidget())
+    ttod = fields.Field(attribute='ttod',column_name='ttod')
+    ttnd = fields.Field(attribute='ttnd',column_name='ttnd')
+    due = fields.Field(attribute='due',column_name='due')
+    tc = fields.Field(attribute='tc',column_name='tc')
     
     class Meta:
         model = Student

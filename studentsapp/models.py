@@ -71,6 +71,27 @@ class Religion(models.Model):   # Foreign key
     def __str__(self):
         return self.name
 
+Due_Choices = (
+    ("YES", "Yes"),
+    ("NO", "No"),
+)
+
+Blood_grp = (
+    ('AB+', 'AB+'),
+    ('AB-', 'AB-'),
+    ('A+', 'A+'),
+    ('A-', 'A-'),
+    ('B+', 'B+'),
+    ('B-', 'B-'),
+    ('O+', 'O+'),
+    ('O-', 'O-'),
+    )
+
+TC_Choices = (
+    ("ISSUED", "Issued"),
+    ("NOT ISSUED", "Not Issued"),
+)
+
 
 class Student(models.Model):
     admission_no = models.CharField(
@@ -80,47 +101,51 @@ class Student(models.Model):
     class_sec = models.ForeignKey(
         Class, verbose_name="Class-Sec", blank=False, on_delete=models.CASCADE)   #
     roll_no = models.IntegerField(
-        verbose_name="Roll No.", default=False, blank=False, null=False)  #
+        verbose_name="Roll No.",blank=True, null=True)  #
     name = models.CharField(verbose_name="Name", max_length=50, blank=False)
     aadhar_no = models.CharField(
-        verbose_name="Aadhar No.", max_length=30, blank=True)
+        verbose_name="Aadhar No.", max_length=30, blank=True,null=True)
     mother_name = models.CharField(
         verbose_name="Mother's name", max_length=40, blank=True)
     mother_aadhar = models.CharField(
-        verbose_name="Mother's Aadhar No.", max_length=30, blank=True)
+        verbose_name="Mother's Aadhar No.", max_length=30, blank=True,null=True)
     father_name = models.CharField(
         verbose_name="Father's Name", max_length=50, blank=True)
     father_aadhar = models.CharField(
-        verbose_name="Father's Aadhar No.", max_length=30, blank=True)
+        verbose_name="Father's Aadhar No.", max_length=30, blank=True,null=True)
     dob = models.DateField(verbose_name="D.O.B",
                            auto_now=False, auto_now_add=False, blank=True,null=True)
-    mobile_1 = models.CharField(max_length=10, blank=True)
-    mobile_2 = models.CharField(max_length=10, blank=True)
+    mobile_1 = models.CharField(max_length=10, blank=True,null=True)
+    mobile_2 = models.CharField(max_length=10, blank=True,null=True)
     pr_addr = models.CharField(
-        verbose_name="Present Address", max_length=100, blank=True)
+        verbose_name="Present Address", max_length=100, blank=True,null=True)
     pm_addr = models.CharField(
-        verbose_name="Permanent Address", max_length=100, blank=True)
-    email_id = models.EmailField(max_length=40, blank=True)
+        verbose_name="Permanent Address", max_length=100, blank=True,null=True)
+    email_id = models.EmailField(max_length=40, blank=True,null=True)
     gender = models.ForeignKey(Gender, blank=False, on_delete=models.CASCADE)
-    Feecategory = models.CharField(max_length=30, blank=True)
+    Feecategory = models.CharField(max_length=30, blank=True,null=True)
     caste = models.ForeignKey(
         Caste, blank=True, null=True, on_delete=models.CASCADE)
-    blood_grp = models.CharField(max_length=5,null=True, blank=True)
+    blood_grp = models.CharField(verbose_name="Blood Group",max_length=5,choices=Blood_grp,null=True, blank=True,default=None)
     Religion = models.ForeignKey(
         Religion,null=True, blank=True, on_delete=models.CASCADE)
     ref_admn_no = models.CharField(
         verbose_name="Reference admission no. of Ex-Student", max_length=30, blank=True, null=True)
-    action = models.CharField(verbose_name="Action", max_length=10, blank=True)
+    action = models.CharField(verbose_name="Action", max_length=10, blank=True,null=True)
     arrear_due = models.CharField(
         verbose_name="Arrear Due", max_length=10,null=True, blank=True)
     ttod = models.CharField(
         verbose_name="Total Onetime Due", max_length=10,null=True, blank=True)
     ttnd = models.CharField(
         verbose_name="Total Normal Due", max_length=10, null=True,blank=True)
-    due = models.BooleanField(
-        verbose_name="Due(YES/NO)", blank=True, null=True, default=None)
-    tc = models.BooleanField(
-        verbose_name="TC(YES/NO)", blank=True, null=True, default=None)
+    # due = models.BooleanField(
+    #     verbose_name="Due(YES/NO)", blank=True, null=True, default=None)
+    # tc = models.BooleanField(
+    #     verbose_name="TC(YES/NO)", blank=True, null=True, default=None)
+    due = models.CharField(
+        verbose_name="Due(YES/NO)",max_length=10,choices=Due_Choices, blank=True, null=True, default=None)
+    tc = models.CharField(
+        verbose_name="TC",max_length=20,choices=TC_Choices, blank=True, null=True, default=None)
 
     def __str__(self):
         return self.name

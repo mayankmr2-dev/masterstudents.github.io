@@ -5,11 +5,6 @@ from django.forms import ModelChoiceField
 from django.contrib.auth.forms import UserCreationForm
 from django.core.validators import FileExtensionValidator
 
-# class RegistrationForm(UserCreationForm):
-#     email 
-
-class ImportForm(forms.Form):
-    import_file = forms.FileField(allow_empty_file=False,validators=[FileExtensionValidator(allowed_extensions=['csv', 'xls', 'xlsx'])], label="")
 
 
 class StudentForm(forms.ModelForm):
