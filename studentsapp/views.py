@@ -81,7 +81,12 @@ def tc(request):
 
 @login_required(login_url='/login')
 def feestructure(request):
-    return render(request, 'feestructure.html')
+    fees = Fee_structure.objects.all()
+    # print(student)  
+    context = {
+        "fees":fees
+    }
+    return render(request, 'feestructure.html',context)
 
 @login_required(login_url='/login')
 def classfee(request):

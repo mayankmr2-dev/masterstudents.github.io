@@ -1,155 +1,61 @@
 {% extends 'base.html' %}
+<!-- {% load crispy_forms_tags %} -->
 
 {% load static %}
+{% block title %} Students List {% endblock title %}
+{% comment %} {% block link %}
 
-{% block title %}Fee Structure{% endblock title %}
-
+{% endblock link %} {% endcomment %}
 {% block content %}
+
 <div class="container-fluid">
-    <h3 class="text-dark mb-1">FEE STRUCTURE&nbsp;</h3>
-</div>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>CLASS</th>
-                <th>Subsidiary Fee</th>
-                <th>Laboratory Fee</th>
-                <th>Tuition Fee</th>
-                <th>Comp.Fee</th>
-                <th>One Time</th>
-                <th>Normal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Class 1</td>
-                <td>Cell 2</td>
-                <td>Cell 2</td>
-                <td>Cell 2</td>
-                <td>Cell 2</td>
-                <td>Cell 2</td>
-                <td>Cell 2</td>
-            </tr>
-            <tr>
-                <td>Class 2</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 3</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 5</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 6</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 7</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 8</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 9</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 10</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 11&amp;12 (BIO)</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 11&amp;12 (Comp.)</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 11&amp;12 (Commerce+Comp.)</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-            <tr>
-                <td>Class 11&amp;12 (Commerce+Maths)</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-                <td>Cell 4</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <h1>Students Info</h1>
+    <div class="table-responsive">
+        <!-- <table class="table table-bordered table-light"> -->
+        <table id="bootstrapdatatable" width="100%" class="display">
+            <thead>
+                {% comment %} <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Sl.No.</th> {% endcomment %}
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Class Name</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Subsidiary Fee</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Laboratory Fee</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Tuition Fee</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Computer Fee</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">One Time Fee</th>
+                <th scope="col" style="padding-top: 18px; padding-bottom: 57px;">Normal Fee</th>
+            </thead>
+            <tbody>
+                {% for instance in fees %}
+                <tr>
+                    {% comment %} <td scope="row">{{forloop.counter}}</td> {% endcomment %}
+                    <td scope="row">{{instance.class_name}}</td>
+                    <td scope="row">{{instance.subs_fee}}</td>
+                    <td scope="row">{{instance.lab_fee}}</td>
+                    <td scope="row">{{instance.tut_fee}}</td>
+                    <td scope="row">{{instance.comp_fee}}</td>
+                    <td scope="row">{{instance.one_time}}</td>
+                    <td scope="row">{{instance.normal}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock content %}
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#bootstrapdatatable").DataTable();
+    });
+
+</script>
+<!-- <script>
+    $(document).ready(function () {
+        $('#bootstrapdatatable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+</script> -->
+{% endblock script %}

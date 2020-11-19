@@ -21,6 +21,9 @@ class StudentAdmin(ImportExportModelAdmin):
 class Classlist(admin.ModelAdmin):
     list_display = ['name']
 
+class Feestructurelist(admin.ModelAdmin):
+    list_display = ["class_name","subs_fee",'lab_fee','tut_fee','comp_fee','one_time','normal']
+
 # class Studentlist(admin.ModelAdmin):
 
 
@@ -29,7 +32,7 @@ admin.site.site_title = "DEMS Admin Portal"
 admin.site.index_title = "Welcome to DEMS Portal"
 admin.site.register(Class,Classlist)
 admin.site.register(Gender)
-admin.site.register(Fee_structure)
+admin.site.register(Fee_structure,Feestructurelist)
 admin.site.register(Fee_category)
 admin.site.register(Caste)
 admin.site.register(Religion)
