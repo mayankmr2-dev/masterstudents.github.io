@@ -16,8 +16,12 @@ def home(request):
     obc = Student.objects.filter(caste=7).count()
     sc = Student.objects.filter(caste=8).count()
     st = Student.objects.filter(caste=9).count()
+################################################################
+    tc = Student.objects.filter(tc="ISSUED").count()
+###################################################################
     context = {
-        "gen":gen,"obc":obc,"sc":sc,"st":st
+        "gen":gen,"obc":obc,"sc":sc,"st":st,
+        "tc":[tc]
     }
     return render(request, 'home.html',context)
 

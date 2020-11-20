@@ -94,6 +94,7 @@ TC_Choices = (
 
 
 class Student(models.Model):
+    id=models.IntegerField(primary_key=True)
     admission_no = models.CharField(
         verbose_name="Admission Number", max_length=30, blank=True,null=True)  #
     admission_date = models.DateField(

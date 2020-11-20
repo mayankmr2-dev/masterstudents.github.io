@@ -14,7 +14,7 @@ from .resources import StudentResource
 @admin.register(Student)
 class StudentAdmin(ImportExportModelAdmin):
     resource_class = StudentResource
-    list_display = ['name', 'class_sec', 'roll_no']
+    list_display = ['id','name', 'class_sec', 'roll_no']
     form = StudentForm
     pass
 
