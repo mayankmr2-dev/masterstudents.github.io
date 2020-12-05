@@ -60,7 +60,7 @@ def register(request):
 
 # @login_required(login_url='/login')
 def table(request):
-    student = Student.objects.all()
+    student = Student.objects.exclude(tc__contains="issued")
     # print(student)  
     context = {
         "student":student
